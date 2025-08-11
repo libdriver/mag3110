@@ -4,13 +4,13 @@
 <img src="/doc/image/logo.svg" width="400" height="150"/>
 </div>
 
-## LibDriver HMC5883L
+## LibDriver MAG3110
 
-[![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue.svg)](https://www.libdriver.com/docs/hmc5883l/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
+[![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue.svg)](https://www.libdriver.com/docs/mag3110/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
-霍尼韋爾HMC5883L是一種設計用於低磁場感應的表面貼裝晶片模塊。 它帶有數位介面，用於低成本羅盤和磁力計等應用。 HMC5883L使用了最先進的高解析度HMC118X系列磁阻感測器，該感測器包含放大、自動消磁、偏移消除，支持1°到2°羅盤航向精度12比特ADC等特性。 HMC5883L是一種3.0x3.0x0.9mm表面封裝16針無鉛晶片載體（LCC）。 HMC5883L的應用包括行动电话、上網本、消費電子產品、自動導航系統和個人導航設備。
+飛思卡爾的MAG3110是一種小型、低功耗的數位三軸磁強計。 該裝置可以與三軸加速度計一起使用，以實現提供準確航向資訊且與方向無關的電子羅盤功能。 它具有標準I2C序列介面輸出和智慧嵌入式功能。 MAG3110能够以高達80 Hz的輸出資料速率（ODR）量測磁場； 這些輸出資料速率對應於12ms到幾秒的採樣間隔。
 
-LibDriver HMC5883L是LibDriver推出的HMC5883L的全功能驅動，該驅動提供連續模式磁場強度讀取、單次模式磁場讀取等功能並且它符合MISRA標準。
+LibDriver MAG3110是LibDriver推出的MAG3110的全功能驅動，該驅動提供磁場强度讀取等功能並且它符合MISRA標準。
 
 ### 目錄
 
@@ -18,7 +18,6 @@ LibDriver HMC5883L是LibDriver推出的HMC5883L的全功能驅動，該驅動提
   - [安裝](#安裝)
   - [使用](#使用)
     - [example basic](#example-basic)
-    - [example shot](#example-shot)
   - [文檔](#文檔)
   - [貢獻](#貢獻)
   - [版權](#版權)
@@ -26,17 +25,17 @@ LibDriver HMC5883L是LibDriver推出的HMC5883L的全功能驅動，該驅動提
 
 ### 說明
 
-/src目錄包含了LibDriver HMC5883L的源文件。
+/src目錄包含了LibDriver MAG3110的源文件。
 
-/interface目錄包含了LibDriver HMC5883L與平台無關的IIC總線模板。
+/interface目錄包含了LibDriver MAG3110與平台無關的IIC總線模板。
 
-/test目錄包含了LibDriver HMC5883L驅動測試程序，該程序可以簡單的測試芯片必要功能。
+/test目錄包含了LibDriver MAG3110驅動測試程序，該程序可以簡單的測試芯片必要功能。
 
-/example目錄包含了LibDriver HMC5883L編程範例。
+/example目錄包含了LibDriver MAG3110編程範例。
 
-/doc目錄包含了LibDriver HMC5883L離線文檔。
+/doc目錄包含了LibDriver MAG3110離線文檔。
 
-/datasheet目錄包含了HMC5883L數據手冊。
+/datasheet目錄包含了MAG3110數據手冊。
 
 /project目錄包含了常用Linux與單片機開發板的工程樣例。所有工程均採用shell腳本作為調試方法，詳細內容可參考每個工程裡面的README.md。
 
@@ -55,13 +54,14 @@ LibDriver HMC5883L是LibDriver推出的HMC5883L的全功能驅動，該驅動提
 #### example basic
 
 ```C
-#include "driver_hmc5883l_basic.h"
+#include "driver_mag3110_basic.h"
 
 uint8_t res;
-uint8_t i;
-float m_gauss[3];
+uint32_t i;
+float ut[3];
 
-res = hmc5883l_basic_init();
+/* basic init */
+res = mag3110_basic_init();
 if (res != 0)
 {
     return 1;
@@ -69,77 +69,41 @@ if (res != 0)
 
 ...
 
-
+/* loop */
 for (i = 0; i < 3; i++)
 {
-    hmc5883l_interface_delay_ms(1000);
-    res = hmc5883l_basic_read((float *)m_gauss);
+    /* delay 1000ms */
+    mag3110_interface_delay_ms(1000);
+
+    /* read data */
+    res = mag3110_basic_read((float *)ut);
     if (res != 0)
     {
-        (void)hmc5883l_basic_deinit();
+        (void)mag3110_basic_deinit();
 
         return 1;
     }
-    hmc5883l_interface_debug_print("hmc5883l: x is %0.3f.\n", m_gauss[0]);
-    hmc5883l_interface_debug_print("hmc5883l: y is %0.3f.\n", m_gauss[1]);
-    hmc5883l_interface_debug_print("hmc5883l: z is %0.3f.\n", m_gauss[2]);
+
+    /* output */
+    mag3110_interface_debug_print("%d/%d\n", (uint32_t)(i + 1), (uint32_t)3);
+    mag3110_interface_debug_print("x is %0.3fuT.\n", ut[0]);
+    mag3110_interface_debug_print("y is %0.3fuT.\n", ut[1]);
+    mag3110_interface_debug_print("z is %0.3fuT.\n", ut[2]);
     
     ...
-    
 }
 
 ...
-
-(void)hmc5883l_basic_deinit();
-
-return 0;
-```
-
-#### example shot
-
-```C
-#include "driver_hmc5883l_shot.h"
-
-uint8_t res;
-uint8_t i;
-float m_gauss[3];
-
-res = hmc5883l_shot_init();
-if (res != 0)
-{
-    return 1;
-}
-
-...
-
-for (i = 0; i < 3; i++)
-{
-    hmc5883l_interface_delay_ms(1000);
-    res = hmc5883l_shot_read((float *)m_gauss);
-    if (res != 0)
-    {
-        (void)hmc5883l_shot_deinit();
-
-        return 1;
-    }
-    hmc5883l_interface_debug_print("hmc5883l: x is %0.3f.\n", m_gauss[0]);
-    hmc5883l_interface_debug_print("hmc5883l: y is %0.3f.\n", m_gauss[1]);
-    hmc5883l_interface_debug_print("hmc5883l: z is %0.3f.\n", m_gauss[2]);
     
-    ...
-    
-}
-
-...
-
-(void)hmc5883l_shot_deinit();
+/* deinit */
+(void)mag3110_basic_deinit();
 
 return 0;
 ```
 
 ### 文檔
 
-在線文檔: [https://www.libdriver.com/docs/hmc5883l/index.html](https://www.libdriver.com/docs/hmc5883l/index.html)。
+在線文檔: [https://www.libdriver.com/docs/mag3110/index.html](https://www.libdriver.com/docs/mag3110/index.html)。
 
 離線文檔: /doc/html/index.html。
 

@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['mag3110_5faddress_296',['MAG3110_ADDRESS',['../driver__mag3110_8c.html#a5a0339b8a59fab74edb9fea22b87d380',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fctrl_5freg1_297',['MAG3110_REG_CTRL_REG1',['../driver__mag3110_8c.html#a7c1a8fb2ca6f3c4385aeb370bf319369',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fctrl_5freg2_298',['MAG3110_REG_CTRL_REG2',['../driver__mag3110_8c.html#a3b6d53caa45d157e146c94dfbb39738f',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fdie_5ftemp_299',['MAG3110_REG_DIE_TEMP',['../driver__mag3110_8c.html#a99210bc2c950943413dd48d76c51ddac',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fdr_5fstatus_300',['MAG3110_REG_DR_STATUS',['../driver__mag3110_8c.html#a3e3f5a12f3338317c1b616cbf65e01fa',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5foff_5fx_5flsb_301',['MAG3110_REG_OFF_X_LSB',['../driver__mag3110_8c.html#a92ff387a371327aea6d6a9734e8e6ef2',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5foff_5fx_5fmsb_302',['MAG3110_REG_OFF_X_MSB',['../driver__mag3110_8c.html#a041a8ce24de3d2267c8955a112207ac3',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5foff_5fy_5flsb_303',['MAG3110_REG_OFF_Y_LSB',['../driver__mag3110_8c.html#a32082f5f356dc0d9dbc4c87e16bf1f35',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5foff_5fy_5fmsb_304',['MAG3110_REG_OFF_Y_MSB',['../driver__mag3110_8c.html#a83d6a175998cde48618fc70b17ca5e39',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5foff_5fz_5flsb_305',['MAG3110_REG_OFF_Z_LSB',['../driver__mag3110_8c.html#a5e6efedde6d1b5c8b064a674123f7594',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5foff_5fz_5fmsb_306',['MAG3110_REG_OFF_Z_MSB',['../driver__mag3110_8c.html#aea9bacd992e860b406fcd170a8212d61',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fout_5fx_5flsb_307',['MAG3110_REG_OUT_X_LSB',['../driver__mag3110_8c.html#ad74723af247fa5ee5b5e4180be805584',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fout_5fx_5fmsb_308',['MAG3110_REG_OUT_X_MSB',['../driver__mag3110_8c.html#aa66497b6e579a4e47539bb5727d7be74',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fout_5fy_5flsb_309',['MAG3110_REG_OUT_Y_LSB',['../driver__mag3110_8c.html#a5f36ad9e5e565b6d81c17a73a5b64c2e',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fout_5fy_5fmsb_310',['MAG3110_REG_OUT_Y_MSB',['../driver__mag3110_8c.html#ae2ba06128716306691edbb6b7e3f7a3f',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fout_5fz_5flsb_311',['MAG3110_REG_OUT_Z_LSB',['../driver__mag3110_8c.html#a72fa49c3f5332cd79b8351d45dc1b1c6',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fout_5fz_5fmsb_312',['MAG3110_REG_OUT_Z_MSB',['../driver__mag3110_8c.html#a74545ad92526ed0d093b214bd87f91a9',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fsysmod_313',['MAG3110_REG_SYSMOD',['../driver__mag3110_8c.html#a1c46c58e313dd2cbb44dfc181f8cbea8',1,'driver_mag3110.c']]],
+  ['mag3110_5freg_5fwho_5fam_5fi_314',['MAG3110_REG_WHO_AM_I',['../driver__mag3110_8c.html#a3df7897d141a3b42b4ab32ac3a83b056',1,'driver_mag3110.c']]],
+  ['manufacturer_5fname_315',['MANUFACTURER_NAME',['../driver__mag3110_8c.html#aaa2b8f5b105c3019df0cb346f472e803',1,'driver_mag3110.c']]],
+  ['max_5fcurrent_316',['MAX_CURRENT',['../driver__mag3110_8c.html#a2989837a37d6d63b59c6dd541b785435',1,'driver_mag3110.c']]]
+];

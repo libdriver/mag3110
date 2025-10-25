@@ -10,7 +10,7 @@
 
 Freescale’s MAG3110 is a small, low-power, digital 3-axis magnetometer.The device can be used in conjunction with a 3-axis accelerometer to realize an orientation independent electronic compass that can provide accurate heading information. It features a standard I2C serial interface output and smart embedded functions.The MAG3110 is capable of measuring magnetic fields with an Output Data Rate(ODR) up to 80 Hz; these output data rates correspond to sample intervals from 12 ms to several seconds.
 
-LibDriver MAG3110 is a full-featured driver of MAG3110 launched by LibDriver.It provides magnetic field reading and other functions. LibDriver is MISRA compliant.
+LibDriver MAG3110 is a full-featured driver for MAG3110, launched by LibDriver.It provides magnetic field reading and additional features. LibDriver is MISRA compliant.
 
 ### Table of Contents
 

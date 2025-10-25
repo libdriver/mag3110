@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "LibDriver MAG3110", "index.html", [
-    [ "Modules", "modules.html", "modules" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -50,9 +50,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"group__mag3110__base__driver.html#ggafcef0bdb5c8fa6e8c61dcc36ed56e50ea43caf73b88f5ecc7fa7c17d2da8b9129"
+"annotated.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';

@@ -1,9 +1,25 @@
 var searchData=
 [
-  ['iic_5fdeinit_23',['iic_deinit',['../structmag3110__handle__s.html#af6963bbad902ca6e43942b48c07986c3',1,'mag3110_handle_s']]],
-  ['iic_5finit_24',['iic_init',['../structmag3110__handle__s.html#a8826dd07625f8d90859ce9bd09628d61',1,'mag3110_handle_s']]],
-  ['iic_5fread_25',['iic_read',['../structmag3110__handle__s.html#af4ef726288b88f51a846483803a1249b',1,'mag3110_handle_s']]],
-  ['iic_5fwrite_26',['iic_write',['../structmag3110__handle__s.html#adca3ee7a793bbf510d5267daf0fcf1c5',1,'mag3110_handle_s']]],
-  ['inited_27',['inited',['../structmag3110__handle__s.html#a19bedf28d2b9748f6a62d9ae93f4e68f',1,'mag3110_handle_s']]],
-  ['interface_28',['interface',['../structmag3110__info__s.html#aebaa6c28dd4f2c3dc27566fcb910fd28',1,'mag3110_info_s']]]
+  ['debug_5fprint_0',['debug_print',['../structmag3110__handle__s.html#a769d5b3a6c14790a0e126e8fe70b384b',1,'mag3110_handle_s']]],
+  ['delay_5fms_1',['delay_ms',['../structmag3110__handle__s.html#a406c9433252b7366de417b7a60915c81',1,'mag3110_handle_s']]],
+  ['driver_20function_2',['driver function',['../group__mag3110__base__driver.html',1,'mag3110 base driver function'],['../group__mag3110__driver.html',1,'mag3110 driver function'],['../group__mag3110__example__driver.html',1,'mag3110 example driver function'],['../group__mag3110__extend__driver.html',1,'mag3110 extend driver function'],['../group__mag3110__interface__driver.html',1,'mag3110 interface driver function'],['../group__mag3110__link__driver.html',1,'mag3110 link driver function'],['../group__mag3110__test__driver.html',1,'mag3110 test driver function']]],
+  ['driver_5fmag3110_2ec_3',['driver_mag3110.c',['../driver__mag3110_8c.html',1,'']]],
+  ['driver_5fmag3110_2eh_4',['driver_mag3110.h',['../driver__mag3110_8h.html',1,'']]],
+  ['driver_5fmag3110_5fbasic_2ec_5',['driver_mag3110_basic.c',['../driver__mag3110__basic_8c.html',1,'']]],
+  ['driver_5fmag3110_5fbasic_2eh_6',['driver_mag3110_basic.h',['../driver__mag3110__basic_8h.html',1,'']]],
+  ['driver_5fmag3110_5finterface_2eh_7',['driver_mag3110_interface.h',['../driver__mag3110__interface_8h.html',1,'']]],
+  ['driver_5fmag3110_5finterface_5ftemplate_2ec_8',['driver_mag3110_interface_template.c',['../driver__mag3110__interface__template_8c.html',1,'']]],
+  ['driver_5fmag3110_5flink_5fdebug_5fprint_9',['DRIVER_MAG3110_LINK_DEBUG_PRINT',['../group__mag3110__link__driver.html#ga53d7df65bd787f3a25200f5006a26ac7',1,'driver_mag3110.h']]],
+  ['driver_5fmag3110_5flink_5fdelay_5fms_10',['DRIVER_MAG3110_LINK_DELAY_MS',['../group__mag3110__link__driver.html#ga173d3b5560e0194fd8617c8ff2870c34',1,'driver_mag3110.h']]],
+  ['driver_5fmag3110_5flink_5fiic_5fdeinit_11',['DRIVER_MAG3110_LINK_IIC_DEINIT',['../group__mag3110__link__driver.html#ga61326bb5df67c97f6e255b295abb8061',1,'driver_mag3110.h']]],
+  ['driver_5fmag3110_5flink_5fiic_5finit_12',['DRIVER_MAG3110_LINK_IIC_INIT',['../group__mag3110__link__driver.html#ga1a7b0baa5b5be482dd8758ab88b95cfc',1,'driver_mag3110.h']]],
+  ['driver_5fmag3110_5flink_5fiic_5fread_13',['DRIVER_MAG3110_LINK_IIC_READ',['../group__mag3110__link__driver.html#ga9bc79258737a18b72474b23d3261e2fb',1,'driver_mag3110.h']]],
+  ['driver_5fmag3110_5flink_5fiic_5fwrite_14',['DRIVER_MAG3110_LINK_IIC_WRITE',['../group__mag3110__link__driver.html#gacdc5e3ef2fd0ad0907c6188e2468ee16',1,'driver_mag3110.h']]],
+  ['driver_5fmag3110_5flink_5finit_15',['DRIVER_MAG3110_LINK_INIT',['../group__mag3110__link__driver.html#gabd6d7c6394f77d74cfa1b22b61c33689',1,'driver_mag3110.h']]],
+  ['driver_5fmag3110_5fread_5ftest_2ec_16',['driver_mag3110_read_test.c',['../driver__mag3110__read__test_8c.html',1,'']]],
+  ['driver_5fmag3110_5fread_5ftest_2eh_17',['driver_mag3110_read_test.h',['../driver__mag3110__read__test_8h.html',1,'']]],
+  ['driver_5fmag3110_5fregister_5ftest_2ec_18',['driver_mag3110_register_test.c',['../driver__mag3110__register__test_8c.html',1,'']]],
+  ['driver_5fmag3110_5fregister_5ftest_2eh_19',['driver_mag3110_register_test.h',['../driver__mag3110__register__test_8h.html',1,'']]],
+  ['driver_5fversion_20',['DRIVER_VERSION',['../driver__mag3110_8c.html#ae578001fe043b4cca7a0edd801cfe9c4',1,'driver_mag3110.c']]],
+  ['driver_5fversion_21',['driver_version',['../structmag3110__info__s.html#a41b0bd442708b70d252c50b92c75265a',1,'mag3110_info_s']]]
 ];

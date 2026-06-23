@@ -566,6 +566,7 @@ uint8_t mag3110_set_rate_over_sample(mag3110_handle_t *handle, mag3110_rate_over
 {
     uint8_t res;
     uint8_t prev;
+    mag3110_mode_t prev_mode;
     
     if (handle == NULL)                                                     /* check handle */
     {
@@ -574,6 +575,24 @@ uint8_t mag3110_set_rate_over_sample(mag3110_handle_t *handle, mag3110_rate_over
     if (handle->inited != 1)                                                /* check handle initialization */
     {
         return 3;                                                           /* return error */
+    }
+    
+    res = mag3110_get_mode(handle, &prev_mode);                             /* get mode */
+    if (res != 0)
+    {
+        handle->debug_print("mag3110: get mode failed.\n");                 /* get mode failed */
+        
+        return 1;                                                           /* return error */
+    }
+    if (prev_mode == MAG3110_MODE_ACTIVE)                                   /* active mode */
+    {
+        res = mag3110_set_mode(handle, MAG3110_MODE_STANDBY);               /* set standby mode */
+        if (res != 0)
+        {
+            handle->debug_print("mag3110: set mode failed.\n");             /* set mode failed */
+            
+            return 1;                                                       /* return error */
+        }
     }
     
     res = a_mag3110_iic_read(handle, MAG3110_REG_CTRL_REG1, &prev, 1);      /* read ctrl config */
@@ -591,6 +610,17 @@ uint8_t mag3110_set_rate_over_sample(mag3110_handle_t *handle, mag3110_rate_over
         handle->debug_print("mag3110: write ctrl failed.\n");               /* write ctrl failed */
         
         return 1;                                                           /* return error */
+    }
+    
+    if (prev_mode == MAG3110_MODE_ACTIVE)                                   /* active mode */
+    {
+        res = mag3110_set_mode(handle, MAG3110_MODE_ACTIVE);                /* set active mode */
+        if (res != 0)
+        {
+            handle->debug_print("mag3110: set mode failed.\n");             /* set mode failed */
+            
+            return 1;                                                       /* return error */
+        }
     }
     
     return 0;                                                               /* success return 0 */
@@ -1269,7 +1299,7 @@ uint8_t mag3110_read(mag3110_handle_t *handle, int16_t raw[3], float ut[3])
     uint8_t prev;
     uint8_t status;
     uint8_t buf[6];
-    uint16_t timeout = 1000;
+    uint16_t timeout = 15000;
     
     if (handle == NULL)                                                                 /* check handle */
     {

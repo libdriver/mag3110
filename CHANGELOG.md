@@ -1,3 +1,9 @@
+## 1.0.2 (2026-06-23)
+
+## Bug Fixes
+
+- fix sample bugs
+
 ## 1.0.1 (2025-10-26)
 
 ## Features

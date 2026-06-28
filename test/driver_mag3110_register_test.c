@@ -50,9 +50,10 @@ uint8_t mag3110_register_test(void)
 {
     uint8_t res;
     uint8_t status;
-    uint16_t offset;
-    uint16_t offset_check;
+    int16_t offset;
+    int16_t offset_check;
     uint16_t reg;
+    int16_t reg2;
     float ut;
     float ut_check;
     mag3110_info_t info;
@@ -135,7 +136,7 @@ uint8_t mag3110_register_test(void)
     /* mag3110_set_offset_x/mag3110_get_offset_x test */
     mag3110_interface_debug_print("mag3110: mag3110_set_offset_x/mag3110_get_offset_x test.\n");
     
-    offset = rand() % 0x7FFFU;
+    offset = rand() % 10000;
     res = mag3110_set_offset_x(&gs_handle, offset);
     if (res != 0)
     {
@@ -158,7 +159,7 @@ uint8_t mag3110_register_test(void)
     /* mag3110_set_offset_y/mag3110_get_offset_y test */
     mag3110_interface_debug_print("mag3110: mag3110_set_offset_y/mag3110_get_offset_y test.\n");
     
-    offset = rand() % 0x7FFFU;
+    offset = rand() % 10000;
     res = mag3110_set_offset_y(&gs_handle, offset);
     if (res != 0)
     {
@@ -181,7 +182,7 @@ uint8_t mag3110_register_test(void)
     /* mag3110_set_offset_z/mag3110_get_offset_z test */
     mag3110_interface_debug_print("mag3110: mag3110_set_offset_z/mag3110_get_offset_z test.\n");
     
-    offset = rand() % 0x7FFFU;
+    offset = rand() % 10000;
     res = mag3110_set_offset_z(&gs_handle, offset);
     if (res != 0)
     {
@@ -1047,7 +1048,7 @@ uint8_t mag3110_register_test(void)
     mag3110_interface_debug_print("mag3110: mag3110_offset_convert_to_register/mag3110_offset_convert_to_data test.\n");
     
     ut = (float)(rand() % 1000);
-    res = mag3110_offset_convert_to_register(&gs_handle, ut, &reg);
+    res = mag3110_offset_convert_to_register(&gs_handle, ut, &reg2);
     if (res != 0)
     {
         mag3110_interface_debug_print("mag3110: offset convert to register failed.\n");
@@ -1056,7 +1057,7 @@ uint8_t mag3110_register_test(void)
         return 1;
     }
     mag3110_interface_debug_print("mag3110: set ut %0.1f.\n", ut);
-    res = mag3110_offset_convert_to_data(&gs_handle, reg, &ut_check);
+    res = mag3110_offset_convert_to_data(&gs_handle, reg2, &ut_check);
     if (res != 0)
     {
         mag3110_interface_debug_print("mag3110: offset convert to data failed.\n");
@@ -1067,7 +1068,7 @@ uint8_t mag3110_register_test(void)
     mag3110_interface_debug_print("mag3110: check ut %0.1f.\n", ut_check);
     
     ut = -(float)(rand() % 1000);
-    res = mag3110_offset_convert_to_register(&gs_handle, ut, &reg);
+    res = mag3110_offset_convert_to_register(&gs_handle, ut, &reg2);
     if (res != 0)
     {
         mag3110_interface_debug_print("mag3110: offset convert to register failed.\n");
@@ -1076,7 +1077,7 @@ uint8_t mag3110_register_test(void)
         return 1;
     }
     mag3110_interface_debug_print("mag3110: set ut %0.1f.\n", ut);
-    res = mag3110_offset_convert_to_data(&gs_handle, reg, &ut_check);
+    res = mag3110_offset_convert_to_data(&gs_handle, reg2, &ut_check);
     if (res != 0)
     {
         mag3110_interface_debug_print("mag3110: offset convert to data failed.\n");

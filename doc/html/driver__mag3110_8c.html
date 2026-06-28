@@ -98,10 +98,11 @@ $(function(){initNavTree('driver__mag3110_8c.html','',''); });
 <p>driver mag3110 source file  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="driver__mag3110_8h_source.html">driver_mag3110.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for driver_mag3110.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="driver__mag3110_8c__incl.svg" width="248" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="driver__mag3110_8c__incl.svg" width="276" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="driver__mag3110_8c_source.html">Go to the source code of this file.</a></p>
@@ -145,22 +146,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga0e62102e3e5db8ce004175db92943526"><td class="mdescLeft">&#160;</td><td class="mdescRight">get data ready status  <br /></td></tr>
 <tr class="memitem:ga8cb6de7cd03085f2e20f64b1c77935e5" id="r_ga8cb6de7cd03085f2e20f64b1c77935e5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga8cb6de7cd03085f2e20f64b1c77935e5">mag3110_get_mode_status</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, <a class="el" href="group__mag3110__base__driver.html#gaf902999daf7c9a0933f47c0f90c4a662">mag3110_mode_status_t</a> *mode)</td></tr>
 <tr class="memdesc:ga8cb6de7cd03085f2e20f64b1c77935e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">get mode status  <br /></td></tr>
-<tr class="memitem:gab3166b324ff62ac08b34292fb51a328d" id="r_gab3166b324ff62ac08b34292fb51a328d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#gab3166b324ff62ac08b34292fb51a328d">mag3110_offset_convert_to_register</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, float ut, uint16_t *reg)</td></tr>
-<tr class="memdesc:gab3166b324ff62ac08b34292fb51a328d"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert the offset to the register raw data  <br /></td></tr>
-<tr class="memitem:gac053d8d53a0b65a6446aa499f1dd9b98" id="r_gac053d8d53a0b65a6446aa499f1dd9b98"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#gac053d8d53a0b65a6446aa499f1dd9b98">mag3110_offset_convert_to_data</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, uint16_t reg, float *ut)</td></tr>
-<tr class="memdesc:gac053d8d53a0b65a6446aa499f1dd9b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert the register raw data to the offset threshold  <br /></td></tr>
-<tr class="memitem:ga6e5b85c4f697f34d92ca5c2fdd33e021" id="r_ga6e5b85c4f697f34d92ca5c2fdd33e021"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga6e5b85c4f697f34d92ca5c2fdd33e021">mag3110_set_offset_x</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, uint16_t offset)</td></tr>
-<tr class="memdesc:ga6e5b85c4f697f34d92ca5c2fdd33e021"><td class="mdescLeft">&#160;</td><td class="mdescRight">set offset x  <br /></td></tr>
-<tr class="memitem:ga8c5ca17b9071b3ac3cc02afccdf3b56c" id="r_ga8c5ca17b9071b3ac3cc02afccdf3b56c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga8c5ca17b9071b3ac3cc02afccdf3b56c">mag3110_get_offset_x</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, uint16_t *offset)</td></tr>
-<tr class="memdesc:ga8c5ca17b9071b3ac3cc02afccdf3b56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get offset x  <br /></td></tr>
-<tr class="memitem:ga6d4f0a67200ed6861007908a8f06a4a4" id="r_ga6d4f0a67200ed6861007908a8f06a4a4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga6d4f0a67200ed6861007908a8f06a4a4">mag3110_set_offset_y</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, uint16_t offset)</td></tr>
-<tr class="memdesc:ga6d4f0a67200ed6861007908a8f06a4a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">set offset y  <br /></td></tr>
-<tr class="memitem:ga8128375d7d183cbbd9f710a603dc51ee" id="r_ga8128375d7d183cbbd9f710a603dc51ee"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga8128375d7d183cbbd9f710a603dc51ee">mag3110_get_offset_y</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, uint16_t *offset)</td></tr>
-<tr class="memdesc:ga8128375d7d183cbbd9f710a603dc51ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">get offset y  <br /></td></tr>
-<tr class="memitem:gaf578a3b9f4e7f47456e55e7875ffe997" id="r_gaf578a3b9f4e7f47456e55e7875ffe997"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#gaf578a3b9f4e7f47456e55e7875ffe997">mag3110_set_offset_z</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, uint16_t offset)</td></tr>
-<tr class="memdesc:gaf578a3b9f4e7f47456e55e7875ffe997"><td class="mdescLeft">&#160;</td><td class="mdescRight">set offset z  <br /></td></tr>
-<tr class="memitem:ga1384de3dd5cd5fbacc7026403ecdcf7e" id="r_ga1384de3dd5cd5fbacc7026403ecdcf7e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga1384de3dd5cd5fbacc7026403ecdcf7e">mag3110_get_offset_z</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, uint16_t *offset)</td></tr>
-<tr class="memdesc:ga1384de3dd5cd5fbacc7026403ecdcf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get offset z  <br /></td></tr>
+<tr class="memitem:ga907ed0f26a4550aae81ea55d12d3954e" id="r_ga907ed0f26a4550aae81ea55d12d3954e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga907ed0f26a4550aae81ea55d12d3954e">mag3110_offset_convert_to_register</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, float ut, int16_t *reg)</td></tr>
+<tr class="memdesc:ga907ed0f26a4550aae81ea55d12d3954e"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert the offset to the register raw data  <br /></td></tr>
+<tr class="memitem:ga4f213d00534a85f59942054aee3e99c7" id="r_ga4f213d00534a85f59942054aee3e99c7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga4f213d00534a85f59942054aee3e99c7">mag3110_offset_convert_to_data</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, int16_t reg, float *ut)</td></tr>
+<tr class="memdesc:ga4f213d00534a85f59942054aee3e99c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert the register raw data to the offset threshold  <br /></td></tr>
+<tr class="memitem:gad4ee5691c4f43d8af26011abd31704d5" id="r_gad4ee5691c4f43d8af26011abd31704d5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#gad4ee5691c4f43d8af26011abd31704d5">mag3110_set_offset_x</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, int16_t offset)</td></tr>
+<tr class="memdesc:gad4ee5691c4f43d8af26011abd31704d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">set offset x  <br /></td></tr>
+<tr class="memitem:ga757081ee2c87dcd48dc1c7e7892eb761" id="r_ga757081ee2c87dcd48dc1c7e7892eb761"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga757081ee2c87dcd48dc1c7e7892eb761">mag3110_get_offset_x</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, int16_t *offset)</td></tr>
+<tr class="memdesc:ga757081ee2c87dcd48dc1c7e7892eb761"><td class="mdescLeft">&#160;</td><td class="mdescRight">get offset x  <br /></td></tr>
+<tr class="memitem:gafff9a6d768e8a198a09dbe0e5b49e7b9" id="r_gafff9a6d768e8a198a09dbe0e5b49e7b9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#gafff9a6d768e8a198a09dbe0e5b49e7b9">mag3110_set_offset_y</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, int16_t offset)</td></tr>
+<tr class="memdesc:gafff9a6d768e8a198a09dbe0e5b49e7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">set offset y  <br /></td></tr>
+<tr class="memitem:ga2e7e1544e059edaae283a69a2b6c9e25" id="r_ga2e7e1544e059edaae283a69a2b6c9e25"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga2e7e1544e059edaae283a69a2b6c9e25">mag3110_get_offset_y</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, int16_t *offset)</td></tr>
+<tr class="memdesc:ga2e7e1544e059edaae283a69a2b6c9e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">get offset y  <br /></td></tr>
+<tr class="memitem:gacec6b3d376c0c8e6365ba1e3fa48a2c8" id="r_gacec6b3d376c0c8e6365ba1e3fa48a2c8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#gacec6b3d376c0c8e6365ba1e3fa48a2c8">mag3110_set_offset_z</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, int16_t offset)</td></tr>
+<tr class="memdesc:gacec6b3d376c0c8e6365ba1e3fa48a2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">set offset z  <br /></td></tr>
+<tr class="memitem:gae534903e49b3a747a6eeb550aa2fa813" id="r_gae534903e49b3a747a6eeb550aa2fa813"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#gae534903e49b3a747a6eeb550aa2fa813">mag3110_get_offset_z</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, int16_t *offset)</td></tr>
+<tr class="memdesc:gae534903e49b3a747a6eeb550aa2fa813"><td class="mdescLeft">&#160;</td><td class="mdescRight">get offset z  <br /></td></tr>
 <tr class="memitem:gaf021fcaafcdf54863f59eee217bf290f" id="r_gaf021fcaafcdf54863f59eee217bf290f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#gaf021fcaafcdf54863f59eee217bf290f">mag3110_read_die_temperature</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, int8_t *raw, float *degree)</td></tr>
 <tr class="memdesc:gaf021fcaafcdf54863f59eee217bf290f"><td class="mdescLeft">&#160;</td><td class="mdescRight">read die temperature  <br /></td></tr>
 <tr class="memitem:ga029ccf201a07769dc04bbde0b1b12e8f" id="r_ga029ccf201a07769dc04bbde0b1b12e8f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mag3110__base__driver.html#ga029ccf201a07769dc04bbde0b1b12e8f">mag3110_set_rate_over_sample</a> (<a class="el" href="group__mag3110__base__driver.html#ga1bfb9ff666a3d36ca9372f72aacd6894">mag3110_handle_t</a> *handle, <a class="el" href="group__mag3110__base__driver.html#ga907ba84be0625c84fa13d8d60306e0a6">mag3110_rate_over_sample_t</a> rate_over_sample)</td></tr>
@@ -235,7 +236,7 @@ Functions</h2></td></tr>
 <p>chip information definition </p>
 <p>chip name </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00042">42</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00043">43</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -252,7 +253,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>driver version </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00049">49</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00050">50</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -271,7 +272,7 @@ Functions</h2></td></tr>
 <p>iic address definition </p>
 <p>iic address </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00054">54</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00055">55</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -288,7 +289,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>ctrl reg1 register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00075">75</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00076">76</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -305,7 +306,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>ctrl reg2 register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00076">76</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00077">77</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -322,7 +323,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>die temp register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00074">74</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00075">75</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -341,7 +342,7 @@ Functions</h2></td></tr>
 <p>chip register definition </p>
 <p>status register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00059">59</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00060">60</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -358,7 +359,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>off x lsb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00069">69</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00070">70</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -375,7 +376,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>off x msb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00068">68</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00069">69</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -392,7 +393,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>off y lsb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00071">71</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00072">72</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -409,7 +410,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>off y msb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00070">70</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00071">71</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -426,7 +427,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>off z lsb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00073">73</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00074">74</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -443,7 +444,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>off z msb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00072">72</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00073">73</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -460,7 +461,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>out x lsb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00061">61</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00062">62</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -477,7 +478,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>out x msb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00060">60</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00061">61</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -494,7 +495,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>out y lsb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00063">63</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00064">64</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -511,7 +512,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>out y msb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00062">62</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00063">63</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -528,7 +529,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>out z lsb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00065">65</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00066">66</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -545,7 +546,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>out z msb register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00064">64</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00065">65</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -562,7 +563,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>sysmod register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00067">67</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00068">68</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -579,7 +580,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>who am i register </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00066">66</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00067">67</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -596,7 +597,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>manufacturer name </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00043">43</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00044">44</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -613,7 +614,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>chip max current </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00046">46</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00047">47</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -630,7 +631,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>chip max supply voltage </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00045">45</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00046">46</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -647,7 +648,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>chip min supply voltage </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00044">44</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00045">45</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -664,7 +665,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>chip max operating temperature </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00048">48</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00049">49</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>
@@ -681,7 +682,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>chip min operating temperature </p>
 
-<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00047">47</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__mag3110_8c_source.html#l00048">48</a> of file <a class="el" href="driver__mag3110_8c_source.html">driver_mag3110.c</a>.</p>
 
 </div>
 </div>

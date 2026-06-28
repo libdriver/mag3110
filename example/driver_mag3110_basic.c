@@ -48,7 +48,7 @@ static mag3110_handle_t gs_handle;        /**< mag3110 handle */
 uint8_t mag3110_basic_init(void)
 {
     uint8_t res;
-    uint16_t offset;
+    int16_t offset;
     
     /* link interface function */
     DRIVER_MAG3110_LINK_INIT(&gs_handle, mag3110_handle_t);

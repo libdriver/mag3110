@@ -35,6 +35,7 @@
  */
 
 #include "driver_mag3110.h"
+#include <stdlib.h>
 
 /**
  * @brief chip information definition
@@ -200,10 +201,8 @@ uint8_t mag3110_get_mode_status(mag3110_handle_t *handle, mag3110_mode_status_t 
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_offset_convert_to_register(mag3110_handle_t *handle, float ut, uint16_t *reg)
+uint8_t mag3110_offset_convert_to_register(mag3110_handle_t *handle, float ut, int16_t *reg)
 {
-    int16_t r;
-    
     if (handle == NULL)              /* check handle */
     {
         return 2;                    /* return error */
@@ -213,9 +212,7 @@ uint8_t mag3110_offset_convert_to_register(mag3110_handle_t *handle, float ut, u
         return 3;                    /* return error */
     }
     
-    r = (int16_t)(ut / 0.1f);        /* convert real data to register data */
-    r &= ~(1 << 15);                 /* clear bit */
-    *reg = (uint16_t)(r);            /* set register */
+    *reg = (int16_t)(ut / 0.1f);     /* convert real data to register data */
     
     return 0;                        /* success return 0 */
 }
@@ -231,10 +228,8 @@ uint8_t mag3110_offset_convert_to_register(mag3110_handle_t *handle, float ut, u
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_offset_convert_to_data(mag3110_handle_t *handle, uint16_t reg, float *ut)
+uint8_t mag3110_offset_convert_to_data(mag3110_handle_t *handle, int16_t reg, float *ut)
 {
-    int16_t r;
-    
     if (handle == NULL)              /* check handle */
     {
         return 2;                    /* return error */
@@ -244,12 +239,7 @@ uint8_t mag3110_offset_convert_to_data(mag3110_handle_t *handle, uint16_t reg, f
         return 3;                    /* return error */
     }
     
-    r = (int16_t)reg;                /* set register */
-    if ((r & (1 << 14)) != 0)        /* check bit 14 */
-    {
-        r |= (1 << 15);              /* set bit 15 */
-    }
-    *ut = (float)(r) * 0.1f;         /* convert raw data to real data */
+    *ut = (float)(reg) * 0.1f;       /* convert raw data to real data */
     
     return 0;                        /* success return 0 */
 }
@@ -263,10 +253,10 @@ uint8_t mag3110_offset_convert_to_data(mag3110_handle_t *handle, uint16_t reg, f
  *            - 1 set offset x failed
  *            - 2 handle is NULL
  *            - 3 handle is not initialized
- *            - 4 offset > 0x8000
+ *            - 4 abs(offset) > 10000
  * @note      none
  */
-uint8_t mag3110_set_offset_x(mag3110_handle_t *handle, uint16_t offset)
+uint8_t mag3110_set_offset_x(mag3110_handle_t *handle, int16_t offset)
 {
     uint8_t res;
     uint16_t prev;
@@ -280,9 +270,9 @@ uint8_t mag3110_set_offset_x(mag3110_handle_t *handle, uint16_t offset)
     {
         return 3;                                                           /* return error */
     }
-    if (offset > 0x8000U)                                                   /* check offset */
+    if (abs(offset) > 10000)                                                /* check offset */
     {
-        handle->debug_print("mag3110: offset > 0x8000.\n");                 /* offset > 0x8000 */
+        handle->debug_print("mag3110: abs(offset) > 10000.\n");             /* abs(offset) > 10000 */
         
         return 4;                                                           /* return error */
     }
@@ -312,7 +302,7 @@ uint8_t mag3110_set_offset_x(mag3110_handle_t *handle, uint16_t offset)
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_get_offset_x(mag3110_handle_t *handle, uint16_t *offset)
+uint8_t mag3110_get_offset_x(mag3110_handle_t *handle, int16_t *offset)
 {
     uint8_t res;
     uint16_t prev;
@@ -335,7 +325,14 @@ uint8_t mag3110_get_offset_x(mag3110_handle_t *handle, uint16_t *offset)
         return 1;                                                          /* return error */
     }
     prev = ((uint16_t)buf[0] << 8) | buf[1];                               /* set prev */
-    *offset = prev >> 1;                                                   /* set offset */
+    if (((prev >> 15) & 0x01) != 0)
+    {
+        *offset = (int16_t)((prev >> 1) | (1 << 15));                      /* set offset */
+    }
+    else
+    {
+        *offset = (int16_t)(prev >> 1);                                    /* set offset */
+    }
     
     return 0;                                                              /* success return 0 */
 }
@@ -349,10 +346,10 @@ uint8_t mag3110_get_offset_x(mag3110_handle_t *handle, uint16_t *offset)
  *            - 1 set offset y failed
  *            - 2 handle is NULL
  *            - 3 handle is not initialized
- *            - 4 offset > 0x8000
+ *            - 4 abs(offset) > 10000
  * @note      none
  */
-uint8_t mag3110_set_offset_y(mag3110_handle_t *handle, uint16_t offset)
+uint8_t mag3110_set_offset_y(mag3110_handle_t *handle, int16_t offset)
 {
     uint8_t res;
     uint16_t prev;
@@ -366,9 +363,9 @@ uint8_t mag3110_set_offset_y(mag3110_handle_t *handle, uint16_t offset)
     {
         return 3;                                                           /* return error */
     }
-    if (offset > 0x8000U)                                                   /* check offset */
+    if (abs(offset) > 10000)                                                /* check offset */
     {
-        handle->debug_print("mag3110: offset > 0x8000.\n");                 /* offset > 0x8000 */
+        handle->debug_print("mag3110: abs(offset) > 10000.\n");             /* abs(offset) > 10000 */
         
         return 4;                                                           /* return error */
     }
@@ -398,7 +395,7 @@ uint8_t mag3110_set_offset_y(mag3110_handle_t *handle, uint16_t offset)
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_get_offset_y(mag3110_handle_t *handle, uint16_t *offset)
+uint8_t mag3110_get_offset_y(mag3110_handle_t *handle, int16_t *offset)
 {
     uint8_t res;
     uint16_t prev;
@@ -421,7 +418,14 @@ uint8_t mag3110_get_offset_y(mag3110_handle_t *handle, uint16_t *offset)
         return 1;                                                          /* return error */
     }
     prev = ((uint16_t)buf[0] << 8) | buf[1];                               /* set prev */
-    *offset = prev >> 1;                                                   /* set offset */
+    if (((prev >> 15) & 0x01) != 0)
+    {
+        *offset = (int16_t)((prev >> 1) | (1 << 15));                      /* set offset */
+    }
+    else
+    {
+        *offset = (int16_t)(prev >> 1);                                    /* set offset */
+    }
     
     return 0;                                                              /* success return 0 */
 }
@@ -435,10 +439,10 @@ uint8_t mag3110_get_offset_y(mag3110_handle_t *handle, uint16_t *offset)
  *            - 1 set offset z failed
  *            - 2 handle is NULL
  *            - 3 handle is not initialized
- *            - 4 offset > 0x8000
+ *            - 4 abs(offset) > 10000
  * @note      none
  */
-uint8_t mag3110_set_offset_z(mag3110_handle_t *handle, uint16_t offset)
+uint8_t mag3110_set_offset_z(mag3110_handle_t *handle, int16_t offset)
 {
     uint8_t res;
     uint16_t prev;
@@ -452,9 +456,9 @@ uint8_t mag3110_set_offset_z(mag3110_handle_t *handle, uint16_t offset)
     {
         return 3;                                                           /* return error */
     }
-    if (offset > 0x8000U)                                                   /* check offset */
+    if (abs(offset) > 10000)                                                /* check offset */
     {
-        handle->debug_print("mag3110: offset > 0x8000.\n");                 /* offset > 0x8000 */
+        handle->debug_print("mag3110: abs(offset) > 10000.\n");             /* abs(offset) > 10000 */
         
         return 4;                                                           /* return error */
     }
@@ -484,7 +488,7 @@ uint8_t mag3110_set_offset_z(mag3110_handle_t *handle, uint16_t offset)
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_get_offset_z(mag3110_handle_t *handle, uint16_t *offset)
+uint8_t mag3110_get_offset_z(mag3110_handle_t *handle, int16_t *offset)
 {
     uint8_t res;
     uint16_t prev;
@@ -507,7 +511,14 @@ uint8_t mag3110_get_offset_z(mag3110_handle_t *handle, uint16_t *offset)
         return 1;                                                          /* return error */
     }
     prev = ((uint16_t)buf[0] << 8) | buf[1];                               /* set prev */
-    *offset = prev >> 1;                                                   /* set offset */
+    if (((prev >> 15) & 0x01) != 0)
+    {
+        *offset = (int16_t)((prev >> 1) | (1 << 15));                      /* set offset */
+    }
+    else
+    {
+        *offset = (int16_t)(prev >> 1);                                    /* set offset */
+    }
     
     return 0;                                                              /* success return 0 */
 }
@@ -678,6 +689,7 @@ uint8_t mag3110_set_fast_read_mode(mag3110_handle_t *handle, mag3110_bool_t enab
 {
     uint8_t res;
     uint8_t prev;
+    mag3110_mode_t prev_mode;
     
     if (handle == NULL)                                                     /* check handle */
     {
@@ -686,6 +698,24 @@ uint8_t mag3110_set_fast_read_mode(mag3110_handle_t *handle, mag3110_bool_t enab
     if (handle->inited != 1)                                                /* check handle initialization */
     {
         return 3;                                                           /* return error */
+    }
+    
+    res = mag3110_get_mode(handle, &prev_mode);                             /* get mode */
+    if (res != 0)
+    {
+        handle->debug_print("mag3110: get mode failed.\n");                 /* get mode failed */
+        
+        return 1;                                                           /* return error */
+    }
+    if (prev_mode == MAG3110_MODE_ACTIVE)                                   /* active mode */
+    {
+        res = mag3110_set_mode(handle, MAG3110_MODE_STANDBY);               /* set standby mode */
+        if (res != 0)
+        {
+            handle->debug_print("mag3110: set mode failed.\n");             /* set mode failed */
+            
+            return 1;                                                       /* return error */
+        }
     }
     
     res = a_mag3110_iic_read(handle, MAG3110_REG_CTRL_REG1, &prev, 1);      /* read ctrl config */
@@ -703,6 +733,17 @@ uint8_t mag3110_set_fast_read_mode(mag3110_handle_t *handle, mag3110_bool_t enab
         handle->debug_print("mag3110: write ctrl failed.\n");               /* write ctrl failed */
         
         return 1;                                                           /* return error */
+    }
+    
+    if (prev_mode == MAG3110_MODE_ACTIVE)                                   /* active mode */
+    {
+        res = mag3110_set_mode(handle, MAG3110_MODE_ACTIVE);                /* set active mode */
+        if (res != 0)
+        {
+            handle->debug_print("mag3110: set mode failed.\n");             /* set mode failed */
+            
+            return 1;                                                       /* return error */
+        }
     }
     
     return 0;                                                               /* success return 0 */

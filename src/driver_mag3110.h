@@ -360,10 +360,10 @@ uint8_t mag3110_get_mode_status(mag3110_handle_t *handle, mag3110_mode_status_t 
  *            - 1 set offset x failed
  *            - 2 handle is NULL
  *            - 3 handle is not initialized
- *            - 4 offset > 0x8000
+ *            - 4 abs(offset) > 10000
  * @note      none
  */
-uint8_t mag3110_set_offset_x(mag3110_handle_t *handle, uint16_t offset);
+uint8_t mag3110_set_offset_x(mag3110_handle_t *handle, int16_t offset);
 
 /**
  * @brief      get offset x
@@ -376,7 +376,7 @@ uint8_t mag3110_set_offset_x(mag3110_handle_t *handle, uint16_t offset);
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_get_offset_x(mag3110_handle_t *handle, uint16_t *offset);
+uint8_t mag3110_get_offset_x(mag3110_handle_t *handle, int16_t *offset);
 
 /**
  * @brief     set offset y
@@ -387,10 +387,10 @@ uint8_t mag3110_get_offset_x(mag3110_handle_t *handle, uint16_t *offset);
  *            - 1 set offset y failed
  *            - 2 handle is NULL
  *            - 3 handle is not initialized
- *            - 4 offset > 0x8000
+ *            - 4 abs(offset) > 10000
  * @note      none
  */
-uint8_t mag3110_set_offset_y(mag3110_handle_t *handle, uint16_t offset);
+uint8_t mag3110_set_offset_y(mag3110_handle_t *handle, int16_t offset);
 
 /**
  * @brief      get offset y
@@ -403,7 +403,7 @@ uint8_t mag3110_set_offset_y(mag3110_handle_t *handle, uint16_t offset);
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_get_offset_y(mag3110_handle_t *handle, uint16_t *offset);
+uint8_t mag3110_get_offset_y(mag3110_handle_t *handle, int16_t *offset);
 
 /**
  * @brief     set offset z
@@ -414,10 +414,10 @@ uint8_t mag3110_get_offset_y(mag3110_handle_t *handle, uint16_t *offset);
  *            - 1 set offset z failed
  *            - 2 handle is NULL
  *            - 3 handle is not initialized
- *            - 4 offset > 0x8000
+ *            - 4 abs(offset) > 10000
  * @note      none
  */
-uint8_t mag3110_set_offset_z(mag3110_handle_t *handle, uint16_t offset);
+uint8_t mag3110_set_offset_z(mag3110_handle_t *handle, int16_t offset);
 
 /**
  * @brief      get offset z
@@ -430,7 +430,7 @@ uint8_t mag3110_set_offset_z(mag3110_handle_t *handle, uint16_t offset);
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_get_offset_z(mag3110_handle_t *handle, uint16_t *offset);
+uint8_t mag3110_get_offset_z(mag3110_handle_t *handle, int16_t *offset);
 
 /**
  * @brief     set rate over sample
@@ -586,7 +586,7 @@ uint8_t mag3110_get_disable_offset_correction(mag3110_handle_t *handle, mag3110_
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_offset_convert_to_register(mag3110_handle_t *handle, float ut, uint16_t *reg);
+uint8_t mag3110_offset_convert_to_register(mag3110_handle_t *handle, float ut, int16_t *reg);
 
 /**
  * @brief      convert the register raw data to the offset threshold
@@ -599,7 +599,7 @@ uint8_t mag3110_offset_convert_to_register(mag3110_handle_t *handle, float ut, u
  *             - 3 handle is not initialized
  * @note       none
  */
-uint8_t mag3110_offset_convert_to_data(mag3110_handle_t *handle, uint16_t reg, float *ut);
+uint8_t mag3110_offset_convert_to_data(mag3110_handle_t *handle, int16_t reg, float *ut);
 
 /**
  * @}

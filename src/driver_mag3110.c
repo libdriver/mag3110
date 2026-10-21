@@ -1110,6 +1110,7 @@ uint8_t mag3110_reset(mag3110_handle_t *handle)
         
         return 1;                                                                 /* return error */
     }
+    prev |= 0x80;                                                                 /* set bit */
     prev &= ~(1 << 4);                                                            /* clear settings */
     prev |= (1 << 4);                                                             /* set bool */
     res = a_mag3110_iic_write(handle, MAG3110_REG_CTRL_REG2, &prev, 1);           /* write ctrl config */
@@ -1229,6 +1230,7 @@ uint8_t mag3110_init(mag3110_handle_t *handle)
         
         return 5;                                                                 /* return error */
     }
+    prev |= 0x80;                                                                 /* set bit */
     prev |= (1 << 4);                                                             /* set bool */
     res = a_mag3110_iic_write(handle, MAG3110_REG_CTRL_REG2, &prev, 1);           /* write ctrl config */
     if (res != 0)                                                                 /* check result */
